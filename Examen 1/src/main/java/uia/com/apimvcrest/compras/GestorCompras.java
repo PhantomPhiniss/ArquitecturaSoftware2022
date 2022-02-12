@@ -87,7 +87,7 @@ public class GestorCompras {
                 SolicitudOrdenCompra newSolicitud = new SolicitudOrdenCompra(idCompra, "SOC-" + idCompra, "", "", 0, item.getKey(), soc.getKey());
                 newSolicitud.setItems(soc.getValue());
                 misSolicitudesOC.add(newSolicitud);
-                mapper.writeValue(new File("C:/TSU-2022/ComprasProy/SolicitudOrdenCompra-" + newSolicitud.getName() + ".json"), newSolicitud);
+                mapper.writeValue(new File("C:\\Users\\deltp\\Documents\\Personal\\iBERO\\ArquitecturaSoftware2022\\Examen 1\\proyecto1" + newSolicitud.getName() + ".json"), newSolicitud);
             }
         }
 
