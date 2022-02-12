@@ -20,7 +20,12 @@ public class CotizacionServicio implements ICotizacionServicio {
     }
 
     @Override
-    public CotizacionModelo getCotizacion(int id)
+    public CotizacionModelo getCotizacion(int id) {
+        return null;
+    }
+
+    @Override
+    public CotizacionModelo setCotizacion(int id)
     {
         return miGestorCompras.getCotizacion(id);
     }
