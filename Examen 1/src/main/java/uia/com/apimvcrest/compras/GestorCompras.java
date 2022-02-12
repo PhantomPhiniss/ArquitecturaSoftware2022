@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import uia.com.apimvcrest.modelo.CotizacionModelo;
-import uia.com.apimvcrest.modelo.ItemComprasUIAModelo;
 import uia.com.apimvcrest.modelo.ItemCotizacionModelo;
 
 
@@ -199,6 +198,37 @@ public class GestorCompras {
     }
 
 
+    public CotizacionModelo putCotizacion(int id) {
+        CotizacionModelo item = null;
+        for (Entry<Integer, Cotizacion> nodo : misCotizacionesOrdenCompra.entrySet())
+        {
+            if (nodo.getValue().getId() == id)
+            {
 
-
+                item = new CotizacionModelo(nodo.getValue().getId()
+                        , nodo.getValue().getName()
+                        , nodo.getValue().getExistenciaInicial()
+                        , nodo.getValue().getExistenciaMinima()
+                        , nodo.getValue().getConsumoMensual()
+                        , nodo.getValue().getVendedor());
+                if (nodo.getValue().getItems() != null)
+                {
+                    ArrayList<ItemCotizacionModelo> misItemsCotizaciones = new ArrayList<ItemCotizacionModelo>();
+                    for (int j = 0; j < nodo.getValue().getItems().size(); j++) {
+                        //ItemCotizacionModelo(int cantidad, double valorUnitario, double subtotal, double total)
+                        ItemCotizacionModelo nodoItem = new ItemCotizacionModelo(
+                                nodo.getValue().getItems().get(j).getCantidad()
+                                , 0.0
+                                , 0.0
+                                , 0.0);
+                        misItemsCotizaciones.add(nodoItem);
+                    }
+                    item.setItems(misItemsCotizaciones);
+                }
+                misCotizacionesOrdenCompra.remove(nodo.getKey());
+                break;
+            }
+        }
+        return item;
+    }
 }

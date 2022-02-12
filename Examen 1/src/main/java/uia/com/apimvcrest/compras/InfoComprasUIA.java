@@ -26,7 +26,7 @@ public class InfoComprasUIA {
 	private int pedidoProveedor=0;
 	private int clasificacion=-1;
 	private int vendedor=-1;
-	private int cantidad;
+	protected int cantidad;
 	private String unidad="";
 	private String codigo="";
 

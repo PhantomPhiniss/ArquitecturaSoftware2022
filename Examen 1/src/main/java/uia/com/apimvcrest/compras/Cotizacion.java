@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Cotizacion extends SolicitudOrdenCompra{
 
+    private Object Vendedor;
     private double valorUnitario=0.0;
     private double subtotal=0.0;
     private double total=0.0;
@@ -31,6 +32,7 @@ public class Cotizacion extends SolicitudOrdenCompra{
         this.total = total;
         this.entrega = entrega;
         this.setClasificacion(info.getClasificacion());
+
     }
 
     public double getValorUnitario() {
@@ -63,5 +65,37 @@ public class Cotizacion extends SolicitudOrdenCompra{
 
     public void setEntrega(int entrega) {
         this.entrega = entrega;
+    }
+
+    public void setExistenciaInicial(){
+        this.cantidad=cantidad;
+    }
+
+    public Object getExistenciaInicial() {
+        return cantidad;
+    }
+
+    public void setExistenciaMinima(){
+        this.cantidad=cantidad;
+    }
+
+    public Object getExistenciaMinima() {
+        return cantidad;
+    }
+
+    public void setConsumoMensual(){
+        this.cantidad=cantidad;
+    }
+
+    public Object getConsumoMensual() {
+        return cantidad;
+    }
+
+    public void setVendedor(){
+        this.Vendedor=Vendedor;
+    }
+
+    public Object Cotizacion(){
+        return Vendedor;
     }
 }

@@ -26,6 +26,9 @@ public class CotizacionServicio implements ICotizacionServicio {
     }
 
     @Override
+    public CotizacionModelo putCotizacion(int id){return miGestorCompras.putCotizacion(id);}
+
+    @Override
     public void print()
     {
         miGestorCompras.printMiModeloCotizaciones();

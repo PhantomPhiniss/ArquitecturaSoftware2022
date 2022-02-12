@@ -13,6 +13,9 @@ public class CotizacionModelo {
     private int entrega = -1;
     private ArrayList<ItemCotizacionModelo> items = new ArrayList<ItemCotizacionModelo>();
 
+    public CotizacionModelo(int id, String name, Object existenciaInicial, Object existenciaMinima, Object consumoMensual, Object proveedor) {
+    }
+
     public ArrayList<ItemCotizacionModelo> getItems() {
         return items;
     }
