@@ -36,8 +36,8 @@ public class CotizacionesController
         return  servicioCotizaciones.deleteCotizacion(id);
     }
 
-    @PutMapping("/cotizacion/{id}")
-    public CotizacionModelo putCotizacionById(@PathVariable int id)
+    @GetMapping("/cotizacion/{id}")
+    public CotizacionModelo CotizacionById(@PathVariable int id)
     {
         return servicioCotizaciones.getCotizacion(id);
     }

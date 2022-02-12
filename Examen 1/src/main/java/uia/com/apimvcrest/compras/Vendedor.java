@@ -45,7 +45,7 @@ public class Vendedor{
                                              solicitudOrdenCompra.getVendedor(), solicitudOrdenCompra.getClasificacion(),
                                              total, total, total, 1);
         newCotizacion.setItems(newLista);
-        mapper.writeValue(new File("C:/TSU-2022/ComprasProy/" + newCotizacion.getName() +"-vendedor-"+this.id +".json"), newCotizacion);
+        mapper.writeValue(new File("C:\\Users\\deltp\\Documents\\Personal\\iBERO\\ArquitecturaSoftware2022\\Examen 1\\ComprasProy/" + newCotizacion.getName() +"-vendedor-"+this.id +".json"), newCotizacion);
         return newCotizacion;
     }
 }
